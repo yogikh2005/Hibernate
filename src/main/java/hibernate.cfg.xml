@@ -1,0 +1,37 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	<hibernate-configuration>
+	<session-factory>
+		<property name="connection.url">jdbc:mysql://localhost:3306/hiber</property>
+		<property name="connection.user">root</property>
+		<property name="connection.password"></property>
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		
+		<property name="cache.use_second_level_cache">true</property>
+		<property name="cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
+		
+		
+		<mapping class="com.hibernate.Student"/>
+		<mapping class="com.hibernate.Address"/>
+		
+		<mapping class="com.map.onetoone.Question"/>
+		<mapping class="com.map.onetoone.Answer"/>
+		
+		<mapping class="com.map.onetomany.Question2"/>
+		<mapping class="com.map.onetomany.Answer2"/>
+		
+		<mapping class="com.map.manytomany.Developer"/>
+		<mapping class="com.map.manytomany.Project"/>
+		
+		<mapping class="com.fetchtehnique.Answer3"/>
+		<mapping class="com.fetchtehnique.Question3"/>
+		<mapping class="com.lifecycle.Student2"/>
+		
+		<mapping resource="com/xml/mapping/person.hbm.xml"/>
+		
+	</session-factory>
+	</hibernate-configuration>
